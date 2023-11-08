@@ -1,0 +1,16 @@
+spring:
+    application:
+        name: demo
+    data:
+        mongodb:
+            database: demo
+            port: 27017
+            host: localhost
+            auto-index-creation: true
+
+server:
+    port: 9001
+
+demo:
+    item:
+        destination: "item"

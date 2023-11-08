@@ -1,0 +1,8 @@
+---
+spring:
+  data:
+    mongodb:
+      database: demo
+      port: 27017
+      host: mongodb
+      auto-index-creation: true

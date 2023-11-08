@@ -1,0 +1,13 @@
+{
+    "name": "debezium-mongodb-source-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
+        "mongodb.connection.string": "mongodb://mongodb:27017/?replicaSet=mongo-replica-set",
+        "mongodb.connection.mode": "replica_set",
+        "topic.prefix": "mongodb",
+        "database.include.list": "demo",
+        "collection.include.list": "demo.items",
+        "capture.mode": "change_streams_update_full",
+        "tombstones.on.delete": "false"
+    }
+}
