@@ -106,7 +106,7 @@
 								<debezium.image.tag>2.4.0.Final</debezium.image.tag>
 								<debezium.port>8083</debezium.port>
 								<debezium.container.logging.enabled>false</debezium.container.logging.enabled>
-								<conduktor.enabled>true</conduktor.enabled>
+								<conduktor.enabled>false</conduktor.enabled>
 								<conduktor.port>8088</conduktor.port>
 							</systemPropertyVariables>
 						</configuration>
