@@ -50,14 +50,9 @@ Start Spring Boot application:
 java -jar target/kafka-connect-debezium-mongodb-1.0.0.jar
 ```
 
-Jump onto Kafka docker container:
+Start `kafka-console-consumer` on the Kafka docker container to listen for the CDC event:
 ```
-docker exec -ti kafka bash
-```
-
-Start `kafka-console-consumer` to listen for the CDC event:
-```
-kafka-console-consumer --topic mongodb.demo.items --bootstrap-server kafka:29092
+docker exec -ti kafka kafka-console-consumer --topic mongodb.demo.items --bootstrap-server kafka:29092
 ```
 
 In a terminal window use curl to submit a POST REST request to the application to create an item:
@@ -78,7 +73,7 @@ Item created with id: 653d06f08faa89580090466e
 
 View the CDC event consumed by the `kafka-console-consumer` from Kafka:
 ```
-{"schema":{"type":"struct","fields":[{"type":"string","optional":true,"name":"io.debezium.data.Json","version":1,"field": [...]
+{"schema":{"type":"struct","fields": [...] "after":"{\"_id\": \"654cecdc4356b26c4bac68af\",\"name\": \"test-item\",\"_class\": \"demo.domain.Item\"}"
 ```
 
 Get the item that has been created using curl:
