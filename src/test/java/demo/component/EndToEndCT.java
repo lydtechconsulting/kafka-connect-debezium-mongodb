@@ -40,7 +40,6 @@ public class EndToEndCT {
     @BeforeEach
     public void setup() {
         String serviceBaseUrl = ServiceClient.getInstance().getBaseUrl();
-        log.info("Service base URL is: {}", serviceBaseUrl);
         RestAssured.baseURI = serviceBaseUrl;
 
         // Configure the test Kafka consumer to listen to the CDC topic for item.
@@ -93,7 +92,7 @@ public class EndToEndCT {
         // Test the DELETE endpoint to delete the item.
         sendDeleteRequest(itemId);
 
-        // Ensure the item cannot be found.
+        // Ensure the deleted item cannot be found.
         sendGetItemRequest(itemId, HttpStatus.NOT_FOUND);
 
         // Ensure the three CDC events were emitted, one for create, one for update, and one for delete.

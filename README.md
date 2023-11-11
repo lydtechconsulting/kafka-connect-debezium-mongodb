@@ -24,6 +24,16 @@ Start Docker containers:
 docker-compose up -d
 ```
 
+Initiate the replica set on the MongoDB docker container:
+```
+docker exec -it mongodb mongosh --eval "rs.initiate({_id:'mongo-replica-set', members: [{_id:0, host: 'mongodb'}]})"
+```
+The status of the replica set can be viewed with:
+```
+docker exec -it mongodb mongosh --eval "rs.status()"
+```
+This should show the single replica set, marked as the `PRIMARY` member.
+
 Check status of Kafka Connect:
 ```
 curl localhost:8083
@@ -85,8 +95,6 @@ A response should be returned with the 200 SUCCESS status code and the item in t
 ```
 HTTP/1.1 200 
 Content-Type: application/json
-Transfer-Encoding: chunked
-Date: Sat, 28 Oct 2023 15:19:36 GMT
 
 {"id":"653d06f08faa89580090466e","name":"test-item"}
 ```

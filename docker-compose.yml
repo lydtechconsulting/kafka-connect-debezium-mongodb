@@ -51,10 +51,6 @@ services:
             - '27017:27017'
         volumes:
             - mongodb_data:/data/db
-        healthcheck:
-            interval: 10s
-            start_period: 30s
-            test: '$$(echo "rs.reconfig({_id : "mongo-replica-set", members : [{_id : 0, host : "mongodb:27017"}]}) || rs.status().ok" --quiet) -eq 1'
 
 volumes:
     mongodb_data:
