@@ -2,7 +2,7 @@
     "name": "debezium-mongodb-source-connector",
     "config": {
         "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
-        "mongodb.connection.string": "mongodb://mongodb:27017/?replicaSet=mongo-replica-set",
+        "mongodb.connection.string": "mongodb://mongodb:27017/?replicaSet=docker-rs",
         "mongodb.connection.mode": "replica_set",
         "topic.prefix": "mongodb",
         "database.include.list": "demo",

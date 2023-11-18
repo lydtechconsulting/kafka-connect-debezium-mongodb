@@ -46,7 +46,7 @@ services:
         hostname: mongodb
         container_name: mongodb
         image: mongo:7.0.2
-        command: ["--replSet", "mongo-replica-set"]
+        command: ["--replSet", "docker-rs"]
         ports:
             - '27017:27017'
         volumes:

@@ -26,7 +26,7 @@ docker-compose up -d
 
 Initiate the replica set on the MongoDB docker container:
 ```
-docker exec -it mongodb mongosh --eval "rs.initiate({_id:'mongo-replica-set', members: [{_id:0, host: 'mongodb'}]})"
+docker exec -it mongodb mongosh --eval "rs.initiate({_id:'docker-rs', members: [{_id:0, host: 'mongodb'}]})"
 ```
 The status of the replica set can be viewed with:
 ```
@@ -46,7 +46,11 @@ curl localhost:8083/connectors
 
 Register connector:
 ```
-curl -X POST localhost:8083/connectors -H "Content-Type: application/json" -d @./connector/debezium-mongodb-source-connector.json
+curl -i -X POST localhost:8083/connectors -H "Content-Type: application/json" -d @./connector/debezium-mongodb-source-connector.json
+```
+The response should show the connector was successfully registered:
+```
+HTTP/1.1 201 Created
 ```
 
 List registered connectors:

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.12</version>
+		<version>3.1.5</version>
 		<relativePath/>
 	</parent>
 	<groupId>demo</groupId>
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>dev.lydtech</groupId>
 			<artifactId>component-test-framework</artifactId>
-			<version>2.5.1</version>
+			<version>2.6.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -91,14 +91,13 @@
 								<include>*CT.*</include>
 							</includes>
 							<environmentVariables>
-								<TESTCONTAINERS_RYUK_DISABLED>${containers.stayup}</TESTCONTAINERS_RYUK_DISABLED>
+								<TESTCONTAINERS_REUSE_ENABLE>${containers.stayup}</TESTCONTAINERS_REUSE_ENABLE>
 							</environmentVariables>
 							<systemPropertyVariables>
 								<service.name>${project.name}</service.name>
 								<service.container.logging.enabled>false</service.container.logging.enabled>
 								<mongodb.enabled>true</mongodb.enabled>
 								<mongodb.image.tag>7.0.2</mongodb.image.tag>
-								<mongodb.replica.set>mongo-replica-set</mongodb.replica.set>
 								<mongodb.container.logging.enabled>false</mongodb.container.logging.enabled>
 								<kafka.enabled>true</kafka.enabled>
 								<kafka.container.logging.enabled>false</kafka.container.logging.enabled>
