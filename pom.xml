@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.5</version>
+		<version>3.3.1</version>
 		<relativePath/>
 	</parent>
 	<groupId>demo</groupId>
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>dev.lydtech</groupId>
 			<artifactId>component-test-framework</artifactId>
-			<version>2.6.0</version>
+			<version>3.5.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -100,6 +100,7 @@
 								<mongodb.image.tag>7.0.2</mongodb.image.tag>
 								<mongodb.container.logging.enabled>false</mongodb.container.logging.enabled>
 								<kafka.enabled>true</kafka.enabled>
+								<kafka.native.enabled>false</kafka.native.enabled>
 								<kafka.container.logging.enabled>false</kafka.container.logging.enabled>
 								<debezium.enabled>true</debezium.enabled>
 								<debezium.image.tag>2.4.0.Final</debezium.image.tag>

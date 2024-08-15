@@ -146,6 +146,8 @@ docker-compose down
 
 The test demonstrates the application publishing events using Debezium (Kafka Connect) for Change Data Capture.   They use a dockerised Kafka broker, a dockerised Debezium Kafka Connect, a dockerised MongoDB database, and a dockerised instance of the application.
 
+To test the application running against the Apache Kafka native instance, set `kafka.enabled` to `false` and `kafka.native.enabled` to `true` in the `pom.xml`.
+
 For more on the component tests see: https://github.com/lydtechconsulting/component-test-framework
 
 Build Spring Boot application jar:
